@@ -1,64 +1,57 @@
-Creative Bible Apps - Explorador da Digital Bible Platform
+Creative Bible Apps - Bible Brain v4 Showcase
 
-O Creative Bible Apps é uma aplicação web de página única (SPA) concebida para explorar de forma visual e intuitiva os recursos da API da Digital Bible Platform (Bible Brain v4).
+O Creative Bible Apps é uma suíte interativa e multimédia concebida para demonstrar o poder e a flexibilidade da Digital Bible Platform (Bible Brain v4).
 
-Esta ferramenta permite a programadores, investigadores e curiosos navegar através de milhares de idiomas, traduções da Bíblia, estruturas de livros e até ler ou ouvir capítulos específicos, tudo isto através de uma interface limpa e moderna.
+Mais do que uma simples API de texto, a DBP4 introduz um ecossistema completo de conteúdos ricos, e esta aplicação serve como um laboratório visual para programadores, designers e ministérios explorarem estas novas capacidades de forma criativa.
 
-✨ Funcionalidades Principais
+🚀 O que há de novo na DBP4? (Recursos Explorados)
 
-Modo de Demonstração Integrado: O projeto inclui um modo mock (dados simulados) ativado por predefinição. Se não tiver uma chave de API, a aplicação irá funcionar e demonstrar o fluxo de utilização com dados de exemplo.
+A versão 4 da plataforma substitui o antigo DAMID pelo FilesetId como identificador principal, expandindo drasticamente os tipos e formatos de conteúdo disponíveis. O Creative Bible Apps demonstra estas funcionalidades:
 
-Visualização Inteligente (Smart View): A aplicação deteta automaticamente o tipo de dados devolvido pela API (lista de idiomas, metadados de uma tradução, texto de um capítulo, áudio, etc.) e renderiza uma interface gráfica amigável e interativa.
+Textos Bíblicos Formatados (HTML/CSS): Apresentação de textos que vão além do "plain-text", mantendo a formatação original, parágrafos, poesia e estilos.
 
-Explorador JSON: Para além da visualização rica, os utilizadores podem alternar para a aba "Resposta JSON" para inspecionar os dados em bruto recebidos da API, ideal para programadores.
+Áudio Sincronizado (Audio Timing): Funcionalidade estilo karaoke! A DBP4 fornece o tempo exato de início de cada versículo. A nossa app demonstra como o texto pode ser realçado em tempo real enquanto o áudio é reproduzido.
 
-Navegação Heurística: Clique num idioma para ver as suas Bíblias, clique numa Bíblia para ver os seus livros, e clique num livro para começar a ler ou ouvir. A aplicação constrói as rotas automaticamente.
+Gospel Films (Vídeo): Integração de gravações de áudio (incluindo Traduções Bíblicas Orais - OBT) com filmes evangélicos, criando representações visuais com precisão palavra por palavra.
 
-Exemplos Prontos a Usar: Um menu lateral com presets de rotas comuns para facilitar os primeiros passos.
+Streaming Adaptativo e Baixo Bitrate: Demonstração de como a API serve conteúdos em HLS, Opus e AAC, otimizando a entrega para regiões com baixa conectividade, superando a antiga limitação de mp3 a 64kbps.
 
-Histórico de Requisições: Regista as últimas rotas acedidas na sessão para facilitar a navegação.
+✨ Funcionalidades da Aplicação
+
+Modo Showcase Integrado: O projeto funciona com dados simulados (mock data) altamente interativos para ilustrar a experiência do utilizador final, sem necessitar de chave de API imediata.
+
+Leitor Imersivo: Uma interface que combina as chamadas de texto formatado com os dados de Audio Timing, oferecendo uma experiência de leitura e audição em simultâneo.
+
+Modo Cinema: Um ambiente escuro e focado para a visualização dos Gospel Films sincronizados com os dados da Bible Brain.
+
+Painel de Formatos: Um explorador que evidencia as opções de bitrate e formatos de streaming adaptativo.
 
 🛠️ Tecnologias Utilizadas
 
-Este projeto foi construído para ser o mais simples e portátil possível, não requerendo ferramentas de compilação complexas para ser executado:
+Este projeto foi construído como uma Single Page Application moderna, focada em renderização de multimédia:
 
-HTML5 & CSS3: Estrutura base da aplicação.
+HTML5 & CSS3: Estrutura base da aplicação com suporte a tags de áudio e vídeo nativas.
 
-React 18: Interface de utilizador e gestão de estado (carregado via CDN).
+React 18: Interface de utilizador modular e gestão de estado complexo (sincronização de áudio/texto) via CDN.
 
-Babel (Standalone): Compilação de código JSX diretamente no navegador.
-
-Tailwind CSS: Estilização utilitária e design responsivo (carregado via script).
+Tailwind CSS: Estilização avançada, design responsivo e "Dark Mode" dinâmico.
 
 🚀 Como Executar o Projeto
 
-Como a aplicação é totalmente baseada no cliente e utiliza CDNs para as dependências, a execução é extremamente simples:
-
 Transfira o ficheiro index.html.
 
-Dê um duplo clique no ficheiro para o abrir em qualquer navegador web moderno (Chrome, Firefox, Safari, Edge).
+Dê um duplo clique no ficheiro para o abrir em qualquer navegador web moderno.
 
-A aplicação irá iniciar imediatamente no Modo de Demonstração.
+A aplicação irá iniciar no Modo de Demonstração Interativo, permitindo navegar pelas diferentes capacidades (Filmes, Áudio Sincronizado, etc.).
 
-🔑 Configurar a API Key (Modo Real)
+📖 Conceitos Essenciais da DBP4
 
-Para aceder ao catálogo completo e real da Digital Bible Platform, precisará de uma chave de API oficial.
+Para criar as suas próprias apps criativas, familiarize-se com:
 
-Registe-se e solicite a sua chave em: Faith Comes By Hearing - API Key Request.
+FilesetId: O coração da DBP4, agrupando conteúdos do mesmo tipo e formato.
 
-Abra o ficheiro index.html num editor de texto ou de código.
+Tipos de Fileset: Textos (text_plain, text_format), Áudio (audio, audio_drama), Vídeo (video_stream).
 
-Procure a seguinte linha na função principal App (dentro da tag <script type="text/babel">):
+Endpoints de Timing: /timestamps para sincronização perfeita entre os arrays de texto e os ficheiros multimédia.
 
-const publicApiKey = 'SUA_CHAVE_API_AQUI'; 
-
-
-Substitua 'SUA_CHAVE_API_AQUI' pela sua chave real (entre aspas).
-
-Guarde o ficheiro e recarregue a página no navegador. O aviso laranja do Modo de Demonstração irá desaparecer e a aplicação passará a consultar os dados reais da internet.
-
-🤝 Contribuições
-
-Este é um projeto de exploração inicial. Sinta-se à vontade para fazer um fork, melhorar a interface, adicionar novos visualizadores de dados (como visualização de vídeos do Evangelho de Lucas) ou implementar traduções na interface.
-
-Criado para a exploração de dados abertos e partilha de conhecimento.
+Criado para a exploração criativa da Palavra através da tecnologia.
